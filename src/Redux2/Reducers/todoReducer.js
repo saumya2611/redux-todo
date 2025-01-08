@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { CREATE_TODO, DELETE_TODO, UPDATE_TODO, RESTORE_TODO } from "../Action";
 
 const initialState = {
@@ -15,6 +16,8 @@ export const todoReducer = (state = initialState, action) => {
         value: payload,
         id: state.idCnt,
       };
+      toast.success(`successfully created`);
+
       return {
         ...state,
         todoData: [...state.todoData, todoObj],
@@ -23,6 +26,7 @@ export const todoReducer = (state = initialState, action) => {
     case DELETE_TODO:
       const newArr = state.todoData.filter((item) => item.id != payload);
       console.log("newArr==========>", newArr);
+      toast.success(`successfully deleted`);
 
       const restoreData = state.todoData.find((item) => item.id === payload);
       console.log("restoreData==========>", restoreData);
@@ -37,6 +41,8 @@ export const todoReducer = (state = initialState, action) => {
       const newRestoreArr = state.restoreArr.filter(
         (item) => item.id != payload.id
       );
+      toast.success(`successfully restore`);
+
       return {
         ...state,
         restoreArr: newRestoreArr,
@@ -54,6 +60,7 @@ export const todoReducer = (state = initialState, action) => {
         return item;
       });
       console.log("newData=========>", newData);
+      toast.success(`successfully updated`);
 
       return {
         ...state,

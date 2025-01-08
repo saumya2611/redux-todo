@@ -45,7 +45,9 @@ const Edit = ({ item }) => {
         <Button
           title={"Delete"}
           className={`bg-red-600 hover:bg-red-500 sm:px-8 sm:py-2 px-4 py-1 text-white rounded-sm`}
-          onClick={() => dispatch(deleteTodo(item.id))}
+          onClick={() => {
+            dispatch(deleteTodo(item.id));
+          }}
         />
       </div>
     </div>
