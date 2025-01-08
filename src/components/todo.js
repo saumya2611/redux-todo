@@ -16,7 +16,7 @@ const Todo = () => {
   console.log("currentState", currentState);
   const addTodo = () => {
     if (!inputValue.trim()) {
-      alert("plzzz field value");
+      alert("Enter value first");
       return;
     }
     dispatch(createTodo(inputValue));
