@@ -4,6 +4,7 @@ import Edit from "./Edit";
 import { useDispatch, useSelector } from "react-redux";
 import { createTodo } from "../Redux2/Action";
 import Restore from "./retore";
+import { toast } from "react-toastify";
 
 const Todo = () => {
   const [inputValue, setInputValue] = useState("");
@@ -16,7 +17,7 @@ const Todo = () => {
   console.log("currentState", currentState);
   const addTodo = () => {
     if (!inputValue.trim()) {
-      alert("Enter value first");
+      toast.warn("Enter value first");
       return;
     }
     dispatch(createTodo(inputValue));

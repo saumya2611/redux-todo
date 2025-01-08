@@ -4,6 +4,7 @@ import Todo from "./components/todo";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./Redux2/store";
+import { ToastContainer } from "react-toastify";
 
 // import { Provider } from "react-redux";
 // import store from "./Redux/Store";
@@ -20,6 +21,7 @@ function App() {
       <PersistGate loading={null} persistor={persistor}>
         <div className="App">
           <Todo />
+          <ToastContainer />
         </div>
       </PersistGate>
     </Provider>
