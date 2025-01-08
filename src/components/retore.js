@@ -7,13 +7,13 @@ const Restore = ({ item }) => {
   const dispatch = useDispatch();
   return (
     <div className="mt-3">
-      <div className="flex gap-1">
-        <div className="border border-gray-200 w-[400px] px-3 py-2 text-left">
+      <div className="flex justify-center items-center sm:flex gap-1">
+        <div className="border border-gray-200 sm:w-[400px] w-[200px] px-3 sm:py-2 py-1 text-left">
           {item.value}
         </div>
         <Button
           title={"Restore"}
-          className={`bg-green-500 hover:bg-green-400 px-8 py-2 text-white rounded-sm`}
+          className={`bg-green-500 hover:bg-green-400 sm:px-8 sm:py-2 px-4 py-1 text-white rounded-sm`}
           onClick={() => dispatch(restoreTodo(item))}
         />
       </div>
